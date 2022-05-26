@@ -76,6 +76,7 @@ Sample README file generated from app will be named generatedREADME.md as to avo
 ### Future Features
 * Possibly add extra input for Table of Contents so additional sections can be added by user
 * Possibly add step-by-step input fields for installation and testing sections
+* Try to clean up license information
 
 ## <a name="license"></a>License
 
