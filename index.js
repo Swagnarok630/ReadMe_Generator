@@ -10,12 +10,27 @@ const questions = [
     {
         type: "input",
         name: "description",
-        message: "What is the description of your project?",
+        message: "Give a brief description of your project.",
     },
     {
         type: "input",
         name: "installation",
-        message: "How do you install your project?",
+        message: "Explain the procedure to install your project.",
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "Please provide additional instructions and/or examples of the apps use.",
+    },
+    {
+        type: "input",
+        name: "contribution",
+        message: "How many others contribute to the project?",
+    },
+    {
+        type: "input",
+        name: "tests",
+        message: "If there are any test cases for this project, please explain them here.",
     },
     {
         type: "input",
@@ -31,6 +46,12 @@ const questions = [
         type: "input",
         name: "email",
         message: "What is your email?",
+    },
+    {
+        type: "checkbox",
+        name: "license",
+        message: "Select licenses used:",
+        choices: ["MIT", "GPLv3", "BSD", "ISC", "Creative Commons", "Unlicense", "No license"]
     }
 ]
 
@@ -40,33 +61,38 @@ function createReadme(answers) {
 
 ## Description
 ${answers.description}
+
 App can be found deployed [here](${answers.deployed}).
 
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
-* [License](#license)
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
+* [License](#license)
 
 
 ## <a name="installation"></a>Installation Instructions
 ${answers.installation}
 
 ## <a name="usage"></a>Usage
-
-## <a name="license"></a>License
+${answers.usage}
 
 ## <a name="contributing"></a>Contributing
+${answers.contribution}
 
 ## <a name="tests"></a>Tests
+${answers.tests}
 
 ## <a name="questions"></a>Questions
 If there are any questions or concerns regarding the app, you may contact me through the following:
 * Github - <https://github.com/${answers.github}>
 * E-mail - ${answers.email}
+
+## <a name="license"></a>License
     `)
+    console.log(answers.license)
 }
 
 inquirer
